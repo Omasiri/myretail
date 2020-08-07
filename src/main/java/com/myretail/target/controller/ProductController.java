@@ -4,6 +4,7 @@ import com.myretail.target.data.ProductRepository;
 import com.myretail.target.dto.CurrentPriceDto;
 import com.myretail.target.dto.DtoUtils;
 import com.myretail.target.dto.ProductDto;
+import com.myretail.target.exceptions.ResourceNotFoundException;
 import com.myretail.target.model.Product;
 import com.myretail.target.services.SequenceGeneratorService;
 import com.myretail.target.services.TargetService;
@@ -58,8 +59,8 @@ public class ProductController {
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity<ProductDto> show(@PathVariable(value = "id") Long productId) throws Exception{
-        Product product = productRepository.findById(productId).orElseThrow(() -> new Exception("Resource not found for id "+ productId));
+    public ResponseEntity<ProductDto> show(@PathVariable(value = "id") Long productId) throws ResourceNotFoundException {
+        Product product = productRepository.findById(productId).orElseThrow(() -> new ResourceNotFoundException("Resource not found for id "+ productId));
         String title = targetService.getTitle(productId);
         ProductDto productDto = utils.getProductDto(product, title,currencyCode);
 
@@ -76,7 +77,7 @@ public class ProductController {
     public ResponseEntity < Product > update(@PathVariable(value = "id") Long productId,
                                                       @RequestBody Product product) throws Exception {
         Product product1 = productRepository.findById(productId)
-                .orElseThrow(() -> new Exception("Product not found for this id :: " + productId));
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found for this id :: " + productId));
 
         product1.setPrice(product.getPrice());
         final Product updatedProduct = productRepository.save(product1);
@@ -88,7 +89,7 @@ public class ProductController {
     public Map<String,Boolean> delete(@PathVariable(value = "id") Long productId,
                                       @RequestBody Product product) throws Exception {
         Product product1 = productRepository.findById(productId)
-                .orElseThrow(() -> new Exception("Product not found for this id :: " + productId));
+                .orElseThrow(() -> new ResourceNotFoundException("Product not found for this id :: " + productId));
 
         productRepository.delete(product1);
         Map < String, Boolean > response = new HashMap<>();
