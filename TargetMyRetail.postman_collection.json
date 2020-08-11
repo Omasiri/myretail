@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "a1742505-50a4-4948-a3ed-0eda547eb844",
+		"name": "TargetMyRetail",
+		"description": "My retail API used for retrieving product information.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET product ../api/v1/products/13860428",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://targetassignment-env.eba-89qmitrp.us-east-1.elasticbeanstalk.com/api/v1/products/13860428",
+					"protocol": "http",
+					"host": [
+						"targetassignment-env",
+						"eba-89qmitrp",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"13860428"
+					]
+				},
+				"description": "Send a GET request to retrieve product name and price given the product id"
+			},
+			"response": []
+		},
+		{
+			"name": "POST ... /api/v1/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"12954218\",\r\n    \"price\":\"640.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://targetassignment-env.eba-89qmitrp.us-east-1.elasticbeanstalk.com/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"targetassignment-env",
+						"eba-89qmitrp",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				},
+				"description": "Send a request to persist a new product to the nosql database. Required parmeters {id,price}"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT .. /api/v1/products/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"price\":\"350.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://targetassignment-env.eba-89qmitrp.us-east-1.elasticbeanstalk.com/api/v1/products/1",
+					"protocol": "http",
+					"host": [
+						"targetassignment-env",
+						"eba-89qmitrp",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				},
+				"description": "Update a product with new properties"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

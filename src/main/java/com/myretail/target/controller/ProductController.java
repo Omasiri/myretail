@@ -73,7 +73,7 @@ public class ProductController {
     }
 
 
-    @PutMapping("/product/{id}")
+    @PutMapping("/products/{id}")
     public ResponseEntity < Product > update(@PathVariable(value = "id") Long productId,
                                                       @RequestBody Product product) throws Exception {
         Product product1 = productRepository.findById(productId)
@@ -85,7 +85,7 @@ public class ProductController {
     }
 
 
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping("/products/{id}")
     public Map<String,Boolean> delete(@PathVariable(value = "id") Long productId,
                                       @RequestBody Product product) throws Exception {
         Product product1 = productRepository.findById(productId)
