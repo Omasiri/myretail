@@ -16,7 +16,7 @@ in application.properties file.
 
 You also need to have mongodb installed locally. 
 
-###Prerequisites to run deployed version
+### Prerequisites to run deployed version
 * Postman or A browser such as firefox, chrome, or edge
 * Internet connection. 
 
