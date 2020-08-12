@@ -22,6 +22,9 @@ You also need to have mongodb installed locally.
 
 
 ### API Requests
+The API makes use of swagger for documentation. 
+Please see <a href="http://targetassignment-env.eba-89qmitrp.us-east-1.elasticbeanstalk.com/swagger-ui.html"> Swagger API documentation</a>
+
 You may import the postman collection `TargetMyRetail.postman_collection.json`
 into postman to test the API endpoint. 
 * The only endpoint that is open is the /products endpoint. 
