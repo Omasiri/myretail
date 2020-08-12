@@ -1,15 +1,15 @@
-#MyRetail documentation
+# MyRetail documentation
 
-##Stack
+## Stack
 Framework: Spring Boot Version: 2.3.2
 Hosting: AWS Beanstalk
 DB: MongoDB managed cluster
 
-###Prerequisites to run locally
+### Prerequisites to run locally
 * mongodb
 * Java 8
 
-###Configuration
+### Configuration
 To run the application locally and have connect to your local
 database, you need to update the database connection property (spring.data.mongodb.uri)
 in application.properties file. 
@@ -34,7 +34,7 @@ http requests.
 The url is already included in the provided postman collection.
 
 
-####Note: 
+#### Note: 
 If you run the application locally then you have to modify the postman collection url to match your running instance url
 
 
